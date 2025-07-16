@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 
 const RoutesWrapper = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/enterprise-pakistani-job-form/">
       <Routes>
         <Route path="/" element={<DashboardLayout />}>
           <Route path="/employee" element={<EmployeeWrapper />}>
