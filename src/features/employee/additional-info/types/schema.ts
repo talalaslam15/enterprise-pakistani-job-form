@@ -15,7 +15,7 @@ const referencesSchema = z.object({
 const schema = z.object({
   portfolioLink: z.union([z.string().regex(regex.link), z.literal("")]),
   availabilityToStart: z.coerce.date().refine((date) => date >= startOfToday()),
-  salaryExpectations: z.number().min(30000).max(200000),
+  salaryExpectations: z.number().min(30000).max(300000),
   references: z.array(referencesSchema).min(1),
 });
 
