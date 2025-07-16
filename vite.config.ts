@@ -10,5 +10,5 @@ export default defineConfig({
       $: path.resolve("."),
     },
   },
-  base: "/",
+  base: "/enterprise-pakistani-job-form/",
 });
