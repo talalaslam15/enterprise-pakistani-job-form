@@ -1,50 +1,113 @@
-# React + TypeScript + Vite
+# Pakistani Enterprise Employee Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive multi-step employee onboarding form built with React, TypeScript, and Vite. This application is specifically designed for Pakistani enterprises with localized formatting and validation.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🇵🇰 Pakistani Localization
 
-## Expanding the ESLint configuration
+- **Pakistani Phone Numbers**: Supports format `(+92) 333 - 1234567` with validation for numbers starting with 3
+- **CNIC Integration**: Pakistani Computerized National Identity Card format `12345 - 1234567 - 9`
+- **PKR Currency**: Salary expectations displayed in Pakistani Rupees (PKR)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 📋 Multi-Step Form Flow
 
-- Configure the top-level `parserOptions` property like this:
+1. **Personal Information**: Basic details including name, email, phone, CNIC, and address
+2. **Employment History**: Previous employers and educational background
+3. **Skills Assessment**: Technical skills with proficiency levels
+4. **Additional Information**: Portfolio links, availability, salary expectations, and references
+5. **Review & Submit**: Final review of all entered information
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+### 🎨 Modern UI/UX
+
+- Material-UI components with custom theming
+- Responsive grid layout
+- Dark/Light theme toggle
+- Real-time form validation
+- Progress stepper
+- Error handling with user-friendly messages
+
+### 🛠 Technical Stack
+
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Material-UI (MUI)** for components
+- **React Hook Form** with Zod validation
+- **React Router** for navigation
+- **Zustand** for state management
+- **React Number Format** for input formatting
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Development
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
+```bash
+npm run dev
 ```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Form Validation
+
+The application includes comprehensive validation for Pakistani-specific formats:
+
+- **Phone Numbers**: Must start with 3 and contain exactly 10 digits
+- **CNIC**: Must be exactly 13 digits in the format specified
+- **Email**: Standard email validation
+- **Dates**: Age restrictions (18-100 years) for date of birth
+- **Required Fields**: All essential information is mandatory
+
+## Project Structure
+
+```
+src/
+├── components/           # Reusable UI components
+├── features/            # Feature-based modules
+│   ├── employee/        # Employee form modules
+│   │   ├── personal-info/
+│   │   ├── history/
+│   │   ├── skills/
+│   │   ├── additional-info/
+│   │   └── review/
+│   ├── form/           # Form components and utilities
+│   └── layout/         # Layout components
+├── utils/              # Utility functions and constants
+└── routes.tsx          # Application routing
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Credits
+
+This project is based on the original [Complex Form Enterprise](https://github.com/codegenixdev/complex-form-enterprise) template by [codegenixdev](https://github.com/codegenixdev). The original codebase has been significantly modified and localized for Pakistani business requirements.
+
+## License
+
+This project is licensed under the MIT License.
