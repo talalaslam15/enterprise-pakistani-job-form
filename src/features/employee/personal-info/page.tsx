@@ -60,15 +60,11 @@ const Page = () => {
         <TextField<Schema>
           name="phoneNumber"
           label={d.phoneNumber}
-          format="phoneNumber"
+          format="pakistaniPhone"
         />
       </Grid>
       <Grid size={{ xs: 4 }}>
-        <TextField<Schema>
-          name="socialSecurityNumber"
-          label={d.socialSecurityNumber}
-          format="socialSecurity"
-        />
+        <TextField<Schema> name="cnic" label={d.cnic} format="cnic" />
       </Grid>
       <Grid size={{ xs: 6 }}>
         <Autocomplete<Schema>

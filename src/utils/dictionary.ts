@@ -5,6 +5,7 @@ const d = {
   email: "Email",
   phoneNumber: "Phone Number",
   socialSecurityNumber: "Social Security Number",
+  cnic: "CNIC",
   state: "State",
   city: "City",
   streetAddress: "Street Address",

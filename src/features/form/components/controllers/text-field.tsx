@@ -13,8 +13,10 @@ import { NumericFormat, PatternFormat } from "react-number-format";
 type FormatType =
   | "number"
   | "phoneNumber"
+  | "pakistaniPhone"
   | "currency"
   | "socialSecurity"
+  | "cnic"
   | undefined;
 
 type CustomNumberFormatProps = InputBaseComponentProps & {
@@ -75,8 +77,18 @@ const formatComponents = {
     allowEmptyFormatting: true,
     mask: "_",
   }),
+  pakistaniPhone: createNumberFormat({
+    format: "(+92) ### - #######",
+    allowEmptyFormatting: true,
+    mask: "_",
+  }),
   socialSecurity: createNumberFormat({
     format: "### ## ####",
+    allowEmptyFormatting: true,
+    mask: "_",
+  }),
+  cnic: createNumberFormat({
+    format: "##### - ####### - #",
     allowEmptyFormatting: true,
     mask: "_",
   }),

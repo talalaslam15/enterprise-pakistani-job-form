@@ -1,6 +1,5 @@
 import { calculatePastDate } from "@/utils/calculatePastDate";
 import { regex } from "@/utils/regex";
-import validator from "validator";
 import { z } from "zod";
 
 const schema = z.object({
@@ -10,7 +9,16 @@ const schema = z.object({
   phoneNumber: z
     .string()
     .min(1)
-    .refine((val) => validator.isMobilePhone(val, "en-US")),
+    .refine(
+      (val) => {
+        console.log("Phone validation input:", val);
+
+        return regex.pakistaniPhone.test(val);
+      },
+      {
+        message: "Please enter a valid Pakistani phone number",
+      }
+    ),
   dateOfBirth: z.coerce
     .date()
     .max(calculatePastDate(18))
@@ -18,8 +26,10 @@ const schema = z.object({
   state: z.string().min(1),
   city: z.string().min(1),
   streetAddress: z.string().min(1),
-  socialSecurityNumber: z.union([
-    z.string().regex(regex.socialSecurityNumber),
+  cnic: z.union([
+    z.string().regex(regex.cnic, {
+      message: "Please enter a valid CNIC number",
+    }),
     z.literal(""),
   ]),
 });
@@ -35,7 +45,7 @@ const defaultValues: Schema = {
   phoneNumber: "",
   state: "",
   streetAddress: "",
-  socialSecurityNumber: "",
+  cnic: "",
 };
 
 export {
