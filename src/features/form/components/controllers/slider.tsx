@@ -23,7 +23,7 @@ const formatNumber = (value: number): string => {
     return `${(value / 1000000).toFixed(1)}M`;
   }
   if (value >= 1000) {
-    return `${(value / 1000).toFixed(1)}k`;
+    return `${value / 1000}k`;
   }
   return value.toString();
 };

@@ -37,9 +37,9 @@ const Page = () => {
           name="salaryExpectations"
           label={d.salaryExpectations}
           min={30000}
-          max={200000}
-          unit="$"
-          step={10000}
+          max={300000}
+          unit="PKR "
+          step={5000}
           valueLabelDisplay="on"
         />
       </Grid>
